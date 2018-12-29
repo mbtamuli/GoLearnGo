@@ -45,6 +45,12 @@ go install github.com/mbtamuli/GoLearnGo/hello
 hello
 ```
 
+FYI, once you have installed go, which you can verify using `go version`, you
+can simply run
+```bash
+go get github.com/mbtamuli/GoLearnGo/hello && hello
+```
+
 ## Resources
 
 https://dave.cheney.net/resources-for-new-go-programmers
