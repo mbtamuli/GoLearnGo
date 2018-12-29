@@ -7,10 +7,11 @@ of these projects and possibly work on them, I have started to learn Go.
 
 ## Setup Steps
 
-1. Instal [gvm](https://github.com/moovweb/gvm)
+1. Install [gvm](https://github.com/moovweb/gvm)
 ```bash
 bash < <(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer)
 ```
+
 2. Install Go 1.11.4 (Latest as of this writing)
 ```bash
 gvm install go1.4 -B
@@ -19,12 +20,14 @@ export GOROOT_BOOTSTRAP=$GOROOT
 gvm install go1.11.4
 gvm use go1.11.4 --default
 ```
-3. Creat workspace
+
+3. Create workspace
 ```bash
 mkdir ~/workspace/code/go && cd $_
 export GOPATH=$PWD
 export PATH=$PATH:$(go env GOPATH)/bin
 ```
+
 4. Write a "Hello World" program
 ```bash
 mkdir -p $GOPATH/src/github.com/mbtamuli/GoLearnGo/hello
@@ -39,6 +42,8 @@ func main() {
 	fmt.Println("Hello, world!")
 }
 EOF
+```
+
 5. Run "Hello World"
 ```bash
 go install github.com/mbtamuli/GoLearnGo/hello
