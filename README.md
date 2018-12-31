@@ -7,6 +7,9 @@ of these projects and possibly work on them, I have started to learn Go.
 
 ## Setup Steps
 
+*Note* There's a simpler method at the bottom which doesn't install any Go
+dependencies on the host - [Docker Method](#docker-method)
+
 1. Install [gvm](https://github.com/moovweb/gvm)
 ```bash
 bash < <(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer)
@@ -54,6 +57,23 @@ FYI, once you have installed go, which you can verify using `go version`, you
 can simply run
 ```bash
 go get github.com/mbtamuli/GoLearnGo/hello && hello
+```
+
+### Docker Method
+
+1. Clone the repo
+```
+git clone https://github.com/mbtamuli/GoLearnGo.git
+```
+
+2. Run the following command to start the container
+```
+docker run --rm -ti -v "$PWD":/usr/src/GoLearnGo -w /usr/src/GoLearnGo golang:1.11-alpine /bin/sh
+```
+
+3. Now you can run the  programs using
+```
+go install GoLearnGo/calculator
 ```
 
 ## Resources
