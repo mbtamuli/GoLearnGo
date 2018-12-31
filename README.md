@@ -86,3 +86,9 @@ ever need to "Get Started" with Go.
 ## Progress
 
 1. I have started with https://tour.golang.org
+2. I am making a [client](
+   https://github.com/mbtamuli/GoLearnGo/blob/master/doclient/doclient.go)
+   to consume the [DigitalOcean API](
+   https://developers.digitalocean.com/documentation/v2/) to understand the
+   concepts better. Looking at the source of [godo](
+   https://github.com/digitalocean/godo) as inspiration.
