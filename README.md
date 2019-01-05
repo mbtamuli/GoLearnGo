@@ -96,7 +96,8 @@ ever need to "Get Started" with Go.
 
 ## Notes
 
-_Warning: You might understand nothing if you start reading randomly._
+_Warning: You might understand nothing if you start reading the following notes
+randomly. You need to go through the beginner resources first._
 
 1. [append()](https://golang.org/pkg/builtin/#append) allocates a new
    underlying array if the slice doesn't have enough capacity. Capacity
