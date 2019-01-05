@@ -92,3 +92,13 @@ ever need to "Get Started" with Go.
    https://developers.digitalocean.com/documentation/v2/) to understand the
    concepts better. Looking at the source of [godo](
    https://github.com/digitalocean/godo) as inspiration.
+3. Started with [go-koans](https://github.com/mbtamuli/go-koans/)
+
+## Notes
+
+_Warning: You might understand nothing if you start reading randomly._
+
+1. [append()](https://golang.org/pkg/builtin/#append) allocates a new
+   underlying array if the slice doesn't have enough capacity. Capacity
+   optimazation ensures double the number of elements is added to the previous
+   capacity.
