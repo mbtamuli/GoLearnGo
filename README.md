@@ -92,7 +92,8 @@ ever need to "Get Started" with Go.
    https://developers.digitalocean.com/documentation/v2/) to understand the
    concepts better. Looking at the source of [godo](
    https://github.com/digitalocean/godo) as inspiration.
-3. Started with [go-koans](https://github.com/mbtamuli/go-koans/)
+3. ~Started~ Done with [go-koans](https://github.com/mbtamuli/go-koans/)
+4. Experimenting with [GitHub v4 GraphQL API](githubclient/)
 
 ## Notes
 
