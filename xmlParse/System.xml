@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<!DOCTYPE MODULE SYSTEM "file://localhost/SYSTEMi_HOME_UNIX/Systemi/Doc/Module.dtd">
+
+<MODULE NAME="Reticulating Spline" INDEX="1">
+    <SYSTEM>
+        <PROPERTIES>
+			<PROPERTY NAME ="VERSION">7.0</PROPERTY>
+            <PROPERTY NAME="DEFAULT_USER">User</PROPERTY>
+            <PROPERTY NAME="ADMIN_USER">Admin</PROPERTY>
+			<PROPERTY NAME="ENABLE_PLAIN_CSV">NO</PROPERTY>
+        </PROPERTIES>
+    </SYSTEM>
+</MODULE>
