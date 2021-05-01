@@ -8,4 +8,8 @@ message Person {
   string name = 1;
   int32 id = 2;
   string email = 3;
+  oneof avatar {
+    string imageUrl = 4;
+    bytes imageData = 5;
+  }
 }
