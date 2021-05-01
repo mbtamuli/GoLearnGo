@@ -1,57 +1,58 @@
 package main
 
 import (
-	"encoding/json"
 	"fmt"
 	"io/ioutil"
 
+	"github.com/ghodss/yaml"
 	"github.com/mbtamuli/GoLearnGo/protobufs/pb"
-	"gopkg.in/yaml.v3"
+	"google.golang.org/protobuf/encoding/protojson"
 )
 
-func createMessage() {
-	data := &pb.Person{
-		Name:  "Harry Potter",
-		Id:    1,
-		Email: "harry@potter.com",
+func createMessageFromYAML() (*pb.Person, error) {
+	yamlBytes, err := ioutil.ReadFile("testdata/person.yaml")
+	if err != nil {
+		return nil, err
 	}
-	fmt.Println(data)
+
+	person := &pb.Person{}
+	err = yaml.Unmarshal(yamlBytes, person)
+	if err != nil {
+		return nil, err
+	}
+
+	return person, nil
 }
 
-func createMessageFromJSON() error {
-	bytes, err := ioutil.ReadFile("testdata/person1.json")
+func createMessageFromYAMLWithJSON() (*pb.Person, error) {
+	yamlBytes, err := ioutil.ReadFile("testdata/person.yaml")
 	if err != nil {
-		return err
+		return nil, err
 	}
 
-	data := &pb.Person{}
-	err = json.Unmarshal(bytes, data)
+	person := &pb.Person{}
+	jsonBytes, err := yaml.YAMLToJSON(yamlBytes)
 	if err != nil {
-		return err
+		return nil, err
+	}
+	if err := protojson.Unmarshal(jsonBytes, person); err != nil {
+		return nil, err
 	}
 
-	fmt.Println(data)
-	return nil
-}
-
-func createMessageFromYAML() error {
-	bytes, err := ioutil.ReadFile("testdata/person1.yaml")
-	if err != nil {
-		return err
-	}
-
-	data := &pb.Person{}
-	err = yaml.Unmarshal(bytes, data)
-	if err != nil {
-		return err
-	}
-
-	fmt.Println(data)
-	return nil
+	return person, nil
 }
 
 func main() {
-	createMessage()
-	createMessageFromJSON()
-	createMessageFromYAML()
+	p1, err := createMessageFromYAML()
+	if err != nil {
+		fmt.Println(err)
+	}
+	fmt.Println("Image URL when using just yaml.Unmarshal: " + p1.GetImageUrl())
+
+	p2, err := createMessageFromYAMLWithJSON()
+	if err != nil {
+		fmt.Println(err)
+	}
+	fmt.Println("Image URL when using YAMLToJSON then protojson.Unmarshal: " + p2.GetImageUrl())
+
 }

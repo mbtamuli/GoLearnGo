@@ -15,5 +15,5 @@ regenerate-protobuf-classes: output-dir
 output-dir:
 	mkdir -p pb
 
-run: build generate-protobuf-classes
+run: build regenerate-protobuf-classes
 	./protobuf
