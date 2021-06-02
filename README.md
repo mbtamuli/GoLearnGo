@@ -25,10 +25,10 @@ ever need to "Get Started" with Go.
 If using `database/sql`, you can log sql statements using
 
 ```go
-   import (
-      "github.com/luna-duclos/instrumentedsql"
-	   "modernc.org/sqlite"
-   )
+	import (
+		"github.com/luna-duclos/instrumentedsql"
+		"modernc.org/sqlite"
+	)
    
 	logger := instrumentedsql.LoggerFunc(func(ctx context.Context, msg string, keyvals ...interface{}) {
 		log.Printf("%s %v", msg, keyvals)
