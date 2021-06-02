@@ -25,15 +25,15 @@ ever need to "Get Started" with Go.
 If using `database/sql`, you can log sql statements using
 
 ```go
-	import (
-		"github.com/luna-duclos/instrumentedsql"
-		"modernc.org/sqlite"
-	)
-   
-	logger := instrumentedsql.LoggerFunc(func(ctx context.Context, msg string, keyvals ...interface{}) {
-		log.Printf("%s %v", msg, keyvals)
-	})
+import (
+	"github.com/luna-duclos/instrumentedsql"
+	"modernc.org/sqlite"
+)
 
-	sql.Register("instrumented-sqlite", instrumentedsql.WrapDriver(&sqlite3.SQLiteDriver{}, instrumentedsql.WithLogger(logger)))
-	db, err := sql.Open("instrumented-sqlite", dataSourceName)
+logger := instrumentedsql.LoggerFunc(func(ctx context.Context, msg string, keyvals ...interface{}) {
+	log.Printf("%s %v", msg, keyvals)
+})
+
+sql.Register("instrumented-sqlite", instrumentedsql.WrapDriver(&sqlite3.SQLiteDriver{}, instrumentedsql.WithLogger(logger)))
+db, err := sql.Open("instrumented-sqlite", dataSourceName)
 ```
